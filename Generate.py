@@ -5,8 +5,8 @@ import qrcode
 import ecdsa
 import ecdsa.der
 import ecdsa.util
-port = raw_input("Please enter port Arduino is connected to: ")
-ser = serial.Serial(port, 9600)
+#port = raw_input("Please enter port Arduino is connected to: ")
+ser = serial.Serial("/dev/cu.usbmodem1421", 9600)
 start = ser.readline()
 hexstart = "80" + start[0:64]
 bytehex = str(bytearray.fromhex(hexstart))
@@ -17,9 +17,10 @@ checksum = hash2[0:8]
 hexfinal = hexstart + checksum
 unencoded_final = str(bytearray.fromhex(hexfinal))
 encoded_final = base58.b58encode(unencoded_final)
+privFile = encoded_final[-8:]
 print("Private Key: " + encoded_final)
 img = qrcode.make(encoded_final)
-img.save("Key.png")
+img.save("Key_" + privFile + ".png")
 sk = ecdsa.SigningKey.from_string(start[0:64].decode('hex'), curve=ecdsa.SECP256k1)
 vk = sk.verifying_key
 publicKey = ('\04' + sk.verifying_key.to_string()).encode('hex')
@@ -27,5 +28,6 @@ ripemd160 = hashlib.new('ripemd160')
 ripemd160.update(hashlib.sha256(publicKey.decode('hex')).digest())
 address = base58.b58encode_check(chr(0) + ripemd160.digest())
 print("Public Address: " + address)
+addrFile = address[-8:]
 img2 = qrcode.make(address)
-img2.save("Address.png")
+img2.save("Address_" + addrFile + ".png")
