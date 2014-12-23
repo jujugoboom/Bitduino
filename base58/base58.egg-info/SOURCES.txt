@@ -1,0 +1,8 @@
+base58.py
+setup.cfg
+setup.py
+base58.egg-info/PKG-INFO
+base58.egg-info/SOURCES.txt
+base58.egg-info/dependency_links.txt
+base58.egg-info/entry_points.txt
+base58.egg-info/top_level.txt
