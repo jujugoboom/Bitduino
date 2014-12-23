@@ -22,7 +22,12 @@ Usage
 
 Security
 --------
-This is a way to generate a Bitcoin private key which can then be used to send and recieve bitcoin. This way is not entirely secure. I would recomend using a computer that has never touched the internet or a raspberry pi that has never touched the internet. If anyone gets your private key they also get full control of your bitcoins. The TrueRandom library is plenty random for most people, but is not completly random. It has a tendency when generating the original binary to generate a 0 more than a 1. It uses static voltage in pin A0 so please do not connect anything to it. A better way would be to use a hardare random number generator, but I do not have one. This is my first bitcoin code and I am new to python.
+This is a way to generate a Bitcoin private key which can then be used to send and recieve bitcoin. This way is not entirely secure. I would recomend using a computer that has never touched the internet or a raspberry pi that has never touched the internet. If anyone gets your private key they also get full control of your bitcoins. The TrueRandom library is plenty random for most people, but is not completly random. It has a tendency when generating the original binary to generate a 0 more than a 1. It uses static voltage in pin A0 so please do not connect anything to it. A better way would be to use a hardare random number generator, but I do not have one. If there is one that you would like to see implemented, email me.
+
+Disclaimer
+----------
+This is my first bitcoin code and I am new to python.
+ 
 -------------------------------------------------------------------------------------------------------------------
 
 If you have any questions or suggestions, please feel free to leave them in the github, or email me at jujugoboom@gmail.com. Thanks for trying this out. I hope you find it as fun and interesting as I.
