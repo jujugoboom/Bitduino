@@ -5,8 +5,8 @@ import qrcode
 import ecdsa
 import ecdsa.der
 import ecdsa.util
-#port = raw_input("Please enter port Arduino is connected to: ")
-ser = serial.Serial("/dev/cu.usbmodem1421", 9600)
+port = raw_input("Please enter port Arduino is connected to: ")
+ser = serial.Serial(port, 9600)
 start = ser.readline()
 hexstart = "80" + start[0:64]
 bytehex = str(bytearray.fromhex(hexstart))
