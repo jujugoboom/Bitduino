@@ -10,7 +10,7 @@ Setup
 3) Copy the folder True Random to your Arduino Libraries folder or in the Arduino IDE click sketch>import library>add library and find the True Random folder
 
 Usage
-------
+-----
 1) Connect your Arduino
 2) Open the file Random_Address.ino inside of the Random_Address folder in the download
 3) Make note of where the Arduino IDE says your Arduino is connected (bottom right-hand corner)
