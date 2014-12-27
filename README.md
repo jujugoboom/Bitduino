@@ -7,7 +7,7 @@ Setup
 -----
 1) Download all necesary files
 2) Run Setup.sh if on Mac or linux or Setup.bat for Windows(not tested)
-3) Copy the folder True Random to your Arduino Libraries folder or in the Arduino IDE click sketch>import library>add library and find the True Random folder
+3) Copy the folder Entropy to your Arduino Libraries folder or in the Arduino IDE click sketch>import library>add library and find the True Random folder
 
 Usage
 -----
@@ -22,11 +22,15 @@ Usage
 
 Security
 --------
-This is a way to generate a Bitcoin private key which can then be used to send and recieve bitcoin. This way is not entirely secure. I would recomend using a computer that has never touched the internet or a raspberry pi that has never touched the internet. If anyone gets your private key they also get full control of your bitcoins. The TrueRandom library is plenty random for most people, but is not completly random. It has a tendency when generating the original binary to generate a 0 more than a 1. It uses static voltage in pin A0 so please do not connect anything to it. A better way would be to use a hardare random number generator, but I do not have one. If there is one that you would like to see implemented, email me.
+This is a way to generate a Bitcoin private key which can then be used to send and recieve bitcoin. This way is not entirely secure. I would recomend using a computer that has never touched the internet or a raspberry pi that has never touched the internet. If anyone gets your private key they also get full control of your bitcoins. 
 
 Disclaimer
 ----------
 This is my first bitcoin code and I am new to python.
+
+Update
+------
+Now using the Entropy library on Arduinos that support it (i.e. Arduino Uno and newer Arduino Megas). This library is tested to be random. It is useful in cryptographic situations, such as this one. If you find a better way, post on the forum, reddit link, or email me at jujugoboom@gmail.com. 
  
 -------------------------------------------------------------------------------------------------------------------
 

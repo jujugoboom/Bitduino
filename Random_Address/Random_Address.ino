@@ -1,4 +1,4 @@
-#include "TrueRandom.h"
+#include "Entropy.h"
 int bitcount = 0;
 int hexcount;
 String privHex;
@@ -8,13 +8,14 @@ String privBinFinal;
 void setup()
 {
  Serial.begin(9600);
+ Entropy.initialize();
  while(bitcount < 256){
    while(hexcount < 4)
    {
     int privBinTemp;
       while(hexcount < 4)
       {
-    privBinTemp += (TrueRandom.randomBit());
+    privBinTemp += (Entropy.random(2));
     hexcount = hexcount + 1;
     delay(10);
       }
@@ -25,7 +26,6 @@ void setup()
    hexcount = 0;
   }
   Serial.print(privHex);
-  delay(100);
   Serial.print("\n");
 }
 
