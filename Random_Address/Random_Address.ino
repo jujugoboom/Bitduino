@@ -1,9 +1,11 @@
 #include "Entropy.h"
+#include "EEPROM.h"
 int bitcount = 0;
 int hexcount;
 String privHex;
 int privBin;
 String privBinFinal;
+int address = 0;
 
 void setup()
 {
@@ -21,6 +23,8 @@ void setup()
       }
       privBin = privBinTemp;
    }
+   EEPROM.write(address, privBin);
+   address = address + 1;
    privHex += String(privBin, HEX);
    bitcount = bitcount + 8;
    hexcount = 0;
@@ -31,5 +35,5 @@ void setup()
 
 void loop()
 {
-  ;
+  
 }

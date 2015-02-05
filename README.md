@@ -31,6 +31,8 @@ This is my first bitcoin code and I am new to python.
 Update
 ------
 Now using the Entropy library on Arduinos that support it (i.e. Arduino Uno and newer Arduino Megas). This library is tested to be random. It is useful in cryptographic situations, such as this one. If you find a better way, post on the forum, reddit link, or email me at jujugoboom@gmail.com. 
+
+Private keys are now written to the EEPROM on the arduino. Using the sketch Read_EEPROM.ino will readout the key that is stored on the arduino. You can see this in the arduino serial monitor in hex, or you can run it with generate.py to re-generate a compressed private key and a public address. IT ONLY STORES ONE PRIVATE KEY AT A TIME. EVERYTIME YOU RE-RUN THE RANDOM ADDRESS CODE, YOUR PRIVATE KEY WRITTEN ON THE ARDUINO IS OVERWRITTEN.
  
 -------------------------------------------------------------------------------------------------------------------
 
