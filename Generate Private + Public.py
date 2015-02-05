@@ -9,7 +9,7 @@ port = raw_input("Please enter port Arduino is connected to: ")
 ser = serial.Serial(port, 9600)
 start = ser.readline()
 hexstart = "80" + start[0:64]
-bytehex = str(bytearray.fromhex(hexstart))
+'''bytehex = str(bytearray.fromhex(hexstart))
 hash1 = hashlib.sha256(bytehex).hexdigest()
 bytehex2 = str(bytearray.fromhex(hash1))
 hash2 = hashlib.sha256(bytehex2).hexdigest()
@@ -20,7 +20,7 @@ encoded_final = base58.b58encode(unencoded_final)
 privFile = encoded_final[-8:]
 print("Private Key: " + encoded_final)
 img = qrcode.make(encoded_final)
-img.save("Key_" + privFile + ".png")
+img.save("Key_" + privFile + ".png")'''
 sk = ecdsa.SigningKey.from_string(start[0:64].decode('hex'), curve=ecdsa.SECP256k1)
 vk = sk.verifying_key
 publicKey = ('\04' + sk.verifying_key.to_string()).encode('hex')
