@@ -7,7 +7,7 @@ Setup
 -----
 1) Download all necesary files
 2) Run Setup.sh if on Mac or linux or Setup.bat for Windows(not tested)
-3) Copy the folder Entropy to your Arduino Libraries folder or in the Arduino IDE click sketch>import library>add library and find the True Random folder
+3) Copy the folder Entropy to your Arduino Libraries folder or in the Arduino IDE click sketch>import library>add library and find the Entropy folder
 
 Usage
 -----
@@ -15,10 +15,12 @@ Usage
 2) Open the file Random_Address.ino inside of the Random_Address folder in the download
 3) Make note of where the Arduino IDE says your Arduino is connected (bottom right-hand corner)
 4) Upload the sketch to your Arduino
-5) In terminal run "cd ~/[PATH_TO_DOWNLOAD]" and then  "python GenerateKey.py"
-6) When it asks what port arduino is connected to, type in the info from step 3
-7) Let it work its magic
-8) It will print out the private key in wallet import format and the public address also make a qr code of both inside the folder of the download.
+5) Do the same with the sketch Read_EEPROM
+6) In terminal run "cd ~/[PATH_TO_DOWNLOAD]" and then  "python generate.py"
+7) When it asks what port arduino is connected to, type in the info from step 3
+8) Choose whether you want your private key or public key
+8) Let it work its magic
+9) It will show in the command line whichever one you chose and also make a QR code of it in the folder you are running it from
 
 Security
 --------
@@ -30,9 +32,9 @@ This is my first bitcoin code and I am new to python.
 
 Update
 ------
-Now using the Entropy library on Arduinos that support it (i.e. Arduino Uno and newer Arduino Megas). This library is tested to be random. It is useful in cryptographic situations, such as this one. If you find a better way, post on the forum, reddit link, or email me at jujugoboom@gmail.com. 
+Now using the Entropy library on Arduinos that support it (i.e. Arduino Uno and newer Arduino Megas). This library is tested to be random. It is useful in cryptographic situations, such as this one.
 
-Private keys are now written to the EEPROM on the arduino. Using the sketch Read_EEPROM.ino will readout the key that is stored on the arduino. You can see this in the arduino serial monitor in hex, or you can run it with generate.py to re-generate a compressed private key and a public address. IT ONLY STORES ONE PRIVATE KEY AT A TIME. EVERYTIME YOU RE-RUN THE RANDOM ADDRESS CODE, YOUR PRIVATE KEY WRITTEN ON THE ARDUINO IS OVERWRITTEN.
+Private keys are now written to the EEPROM on the arduino. Using the sketch Read_EEPROM.ino will readout the key that is stored on the arduino. You can see this in the arduino serial monitor in hex, or you can run it with generate.py to re-generate a compressed private key or a public address. IT ONLY STORES ONE PRIVATE KEY AT A TIME. EVERYTIME YOU RE-RUN THE RANDOM ADDRESS CODE, YOUR PRIVATE KEY WRITTEN ON THE ARDUINO IS OVERWRITTEN.
  
 -------------------------------------------------------------------------------------------------------------------
 

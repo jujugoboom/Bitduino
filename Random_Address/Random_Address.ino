@@ -24,9 +24,6 @@ void setup()
    address = address + 1;
    
  }
-  Serial.print(privHex);
-  delay(100);
-  Serial.print("\n");
 }
 
 void loop()
