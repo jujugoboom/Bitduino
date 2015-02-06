@@ -6,7 +6,7 @@ String hex;
 void setup()
 {
   Serial.begin(9600);
-  while(address < 32)
+  while(address < 37)
   {
    value = EEPROM.read(address);
    hex += String(value, HEX);

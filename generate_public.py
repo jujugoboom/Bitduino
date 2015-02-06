@@ -8,8 +8,8 @@ import ecdsa.util
 port = raw_input("Please enter port Arduino is connected to: ")
 ser = serial.Serial(port, 9600)
 start = ser.readline()
-hexstart = "80" + start[0:64]
-'''bytehex = str(bytearray.fromhex(hexstart))
+'''hexstart = "80" + start[0:64]
+bytehex = str(bytearray.fromhex(hexstart))
 hash1 = hashlib.sha256(bytehex).hexdigest()
 bytehex2 = str(bytearray.fromhex(hash1))
 hash2 = hashlib.sha256(bytehex2).hexdigest()
