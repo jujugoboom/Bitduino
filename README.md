@@ -1,7 +1,7 @@
 Bitduino
 ========
 
-Generate Bitcoin Private Addresses Using Arduino
+Generate Bitcoin Addresses Using Arduino
 
 Setup
 -----
