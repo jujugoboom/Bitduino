@@ -1,3 +1,6 @@
+cd ./six
+python setup.py install
+cd ..
 cd ./base58
 python setup.py install
 cd ..

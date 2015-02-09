@@ -8,7 +8,6 @@ int address = 0;
 
 void setup()
 {
- Serial.begin(9600);
  Entropy.initialize();
  while(bitcount < 256)
  {
