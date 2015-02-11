@@ -5,6 +5,7 @@ import qrcode
 import ecdsa
 import ecdsa.der
 import ecdsa.util
+import time
 
 def privateKeyGenerator():
     hexstart = "80" + start[0:64]
@@ -34,16 +35,40 @@ def publicKeyGenerator():
     img2 = qrcode.make(address)
     img2.save("Address_" + addrFile + ".png")
 
+def read_selection():
+    while True:
+        selection = raw_input("Generate (Pri)vate Key or (Pub)lic Key or E(x)it: ")
+        if selection.lower() == "pri":
+            privateKeyGenerator()
+        elif selection.lower() == "pub":
+            publicKeyGenerator()
+        elif selection.lower() == "x":
+            break
+        else:
+            print("Please Choose Pri or Pub")
+
 port = raw_input("Please enter port Arduino is connected to: ")
 ser = serial.Serial(port, 9600)
-start = ser.readline()
 while True:
-    selection = raw_input("Generate (Pri)vate Key or (Pub)lic Key or E(x)it: ")
-    if selection.lower() == "pri":
-        privateKeyGenerator()
-    elif selection.lower() == "pub":
-        publicKeyGenerator()
+    selection = raw_input("Do you want to (Gen)erate a new address or (Re)ad out an existing one or E(x)it: ")
+    if selection.lower() == "gen":
+        confirmation = raw_input("Are you sure? THIS WILL OVERWRITE ANY EXITSTING ADDRESS AND IT CAN NEVER EVER BE RECOVERED (Y/N): ")
+        if confirmation.lower() == "y":
+            ser.write(b'1')
+            print("Generating...")
+            ser.readline()
+            print("Done")
+            ser.close()
+            ser.open()
+        else:
+            break
+    elif selection.lower() == "re":
+        ser.write(b'2')
+        start = ser.readline()
+        read_selection()
     elif selection.lower() == "x":
         break
     else:
-        print("Please Choose Pri or Pub")
+        print("Please choose Gen or Re")
+
+

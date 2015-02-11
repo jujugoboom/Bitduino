@@ -15,11 +15,10 @@ Usage
 2) Open the file Random_Address.ino inside of the Random_Address folder in the download
 3) Make note of where the Arduino IDE says your Arduino is connected (bottom right-hand corner)
 4) Upload the sketch to your Arduino
-5) Do the same with the sketch Read_EEPROM
 6) In terminal run "cd ~/[PATH_TO_DOWNLOAD]" and then  "python generate.py"
 7) When it asks what port arduino is connected to, type in the info from step 3
-8) Choose whether you want your private key or public key
-8) Let it work its magic
+8) Choose whether you want to generate a new address (CANNOT BE UNDONE) or read out an existing address
+8) If you chose to generate a new one, wait for it to generate, then you can readout either the Public Address or the Private key in WIF
 9) It will show in the command line whichever one you chose and also make a QR code of it in the folder you are running it from
 
 Security
@@ -35,6 +34,7 @@ Update
 Now using the Entropy library on Arduinos that support it (i.e. Arduino Uno and newer Arduino Megas). This library is tested to be random. It is useful in cryptographic situations, such as this one.
 
 Private keys are now written to the EEPROM on the arduino. Using the sketch Read_EEPROM.ino will readout the key that is stored on the arduino. You can see this in the arduino serial monitor in hex, or you can run it with generate.py to re-generate a compressed private key or a public address. IT ONLY STORES ONE PRIVATE KEY AT A TIME. EVERYTIME YOU RE-RUN THE RANDOM ADDRESS CODE, YOUR PRIVATE KEY WRITTEN ON THE ARDUINO IS OVERWRITTEN.
+Everything is compressed into one arduino sketch and one python script.
  
 -------------------------------------------------------------------------------------------------------------------
 
