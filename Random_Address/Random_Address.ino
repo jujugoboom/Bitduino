@@ -31,7 +31,7 @@ void new_address()
  while(bitcount < 256)
  {
    hexcount = 0;
-   while(hexcount < 3)
+   while(hexcount < 4)
    {
     privBin += (Entropy.random(2));
     hexcount = hexcount + 1;
