@@ -16,3 +16,4 @@ cd ..
 cd ./ecdsa
 python setup.py install
 cd ..
+pause

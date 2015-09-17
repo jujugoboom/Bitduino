@@ -1,3 +1,5 @@
+#! python2
+
 import hashlib
 import base58
 import serial
