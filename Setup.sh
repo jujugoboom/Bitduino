@@ -1,5 +1,5 @@
 cd ./six
-sudo pyhton setup.py install
+sudo python setup.py install
 cd ..
 cd ./base58
 sudo python setup.py install
